@@ -1,0 +1,54 @@
+body
+{
+    background-image: url(../Images/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin:0px;
+    padding:0px;
+}
+.logo
+{
+    font-size: 1.8em;
+}
+.icon{
+    color: darkblue;
+}
+div ul li:hover{
+    background-color: lightcyan;
+    border-radius: 25px;
+}
+
+.clts{
+    font-size:4vw; 
+    color:blue;
+}
+
+.model-heading {
+    border-top-left-radius: inherit; 
+    border-top-right-radius: inherit;
+}
+
+.md
+{
+    width:10px;
+}
+.dropdown-submenu {
+    position: relative;
+  }
+  
+  .dropdown-submenu .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -1px;
+  }
+  .dropdown:hover>.dropdown-menu {
+    display: block;
+    }
+  
+  .dropdown>.dropdown-toggle:active {
+    /*Without this, clicking will make it sticky*/
+      pointer-events: none;
+  }
+
+  
+
