@@ -9,7 +9,7 @@ if(isset($_SESSION['id']))
 
     $shop_id = $_GET['id'];
 
-    $qry = "SELECT * FROM `shopkeeper` WHERE `Shop_Id` = '$shop_id'";
+    $qry = "SELECT * FROM `shopkeepers` WHERE `Shop_Id` = '$shop_id'";
 
     $run = mysqli_query($con,$qry);
 

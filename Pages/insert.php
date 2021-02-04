@@ -27,7 +27,7 @@ else
             $temp=1;
         else
         {
-            $qry = "SELECT `Email` FROM `user` WHERE `Email`='$email'";
+            $qry = "SELECT `Email` FROM `users` WHERE `Email`='$email'";
 
             $run = mysqli_query($con,$qry);
 
@@ -66,7 +66,7 @@ else
         }
         if($temp==1)
         {
-        $qry = "INSERT INTO `User`(`Name`, `Email`, `Password`, `Contact`, `Address`, `Image`) 
+        $qry = "INSERT INTO `Users`(`Name`, `Email`, `Password`, `Contact`, `Address`, `Image`) 
             VALUES ('$name','$email','$encode_pass','$contact','$address','$imagename')";
 
         $run = mysqli_query($con,$qry);

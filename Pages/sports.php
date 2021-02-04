@@ -27,7 +27,7 @@ $product = $_GET['id'];
 
 if($product=='outdoor')
 {
-    $qry = "SELECT * FROM `item` WHERE `Product_Type` = 'Outdoor'";
+    $qry = "SELECT * FROM `items` WHERE `Product_Type` = 'Outdoor'";
 
     $run=mysqli_query($con,$qry);
     if($run==true)
@@ -72,7 +72,7 @@ if($product=='outdoor')
 
 else
 {
-    $qry = "SELECT * FROM `item` WHERE `Product_Type` = 'Indoor'";
+    $qry = "SELECT * FROM `items` WHERE `Product_Type` = 'Indoor'";
 
     $run=mysqli_query($con,$qry);
     if($run==true)

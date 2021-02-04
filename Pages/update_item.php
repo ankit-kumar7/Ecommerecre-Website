@@ -9,7 +9,7 @@ if(isset($_SESSION['id']))
     
     $product_id = $_GET['id'];
 
-    $qry = "SELECT * FROM `item` WHERE `Product_Id` = '$product_id'";
+    $qry = "SELECT * FROM `items` WHERE `Product_Id` = '$product_id'";
 
     $run = mysqli_query($con,$qry);
 

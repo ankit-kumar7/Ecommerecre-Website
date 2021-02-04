@@ -27,7 +27,7 @@ if(isset($_SESSION['id']))
         unlink('Item/'.$id);
     }
 
-    $qry = "UPDATE `item` SET `Product_Id`='$product_id',`Product_Name`='$product_name',`Product_Type`= '$types',`Description`= '$description',`Price`='$price',`Image`= '$imagename' 
+    $qry = "UPDATE `items` SET `Product_Id`='$product_id',`Product_Name`='$product_name',`Product_Type`= '$types',`Description`= '$description',`Price`='$price',`Image`= '$imagename' 
                 WHERE `Product_Id` = '$product_id'";
 
     $run = mysqli_query($con,$qry);

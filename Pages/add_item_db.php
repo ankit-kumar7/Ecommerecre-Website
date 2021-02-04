@@ -8,7 +8,7 @@ include_once('db_con.php');
 
 $id = $_SESSION['id'];
 
-$qry = "SELECT `Shop_Id` FROM `shopkeeper` WHERE `Contact`='$id'";
+$qry = "SELECT `Shop_Id` FROM `shopkeepers` WHERE `Contact`='$id'";
 
 $run = mysqli_query($con,$qry);
 
@@ -27,7 +27,7 @@ move_uploaded_file($tempname,"Item/$imagename");
 
 if($shop_id == $data['Shop_Id'])
 {
-    $qry = "INSERT INTO `item`(`Shop_Id`, `Product_Id`, `Product_Name`, `Product_Type`, `Description`,`Price`, `Image`)
+    $qry = "INSERT INTO `items`(`Shop_Id`, `Product_Id`, `Product_Name`, `Product_Type`, `Description`,`Price`, `Image`)
              VALUES ('$shop_id','$product_id','$proodcut_name','$types','$description','$price','$imagename')";
         
     $run = mysqli_query($con,$qry);

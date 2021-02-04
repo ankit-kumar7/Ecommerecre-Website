@@ -22,11 +22,11 @@ if(isset($_SESSION['id']))
 
     if($shop_id!=$oldshop_id)
     {
-        $qry = "UPDATE `shopkeeper` SET `Shop_Id`='' WHERE `Contact`= '$oldcontact'";
+        $qry = "UPDATE `shopkeepers` SET `Shop_Id`='' WHERE `Contact`= '$oldcontact'";
 
         $run = mysqli_query($con,$qry);
 
-        $qry = "SELECT * FROM `shopkeeper` WHERE `Shop_Id`='$shop_id'";
+        $qry = "SELECT * FROM `shopkeepers` WHERE `Shop_Id`='$shop_id'";
 
         $run = mysqli_query($con,$qry);
 
@@ -38,7 +38,7 @@ if(isset($_SESSION['id']))
         {
             $temp=0;
             
-            $qry = "UPDATE `shopkeeper` SET `Shop_Id`='$oldshop_id' WHERE `Contact`= '$oldcontact'";
+            $qry = "UPDATE `shopkeepers` SET `Shop_Id`='$oldshop_id' WHERE `Contact`= '$oldcontact'";
             
             $run = mysqli_query($con,$qry);
             ?>
@@ -62,18 +62,18 @@ if(isset($_SESSION['id']))
             </html>
             <?php
         }
-        $qry = "UPDATE `shopkeeper` SET `Shop_Id`='$shop_id' WHERE `Contact`= '$oldcontact'"; 
+        $qry = "UPDATE `shopkeepers` SET `Shop_Id`='$shop_id' WHERE `Contact`= '$oldcontact'"; 
 
         $run = mysqli_query($con,$qry);
     }
 
     else if($contact!=$oldcontact)
     {
-        $qry = "UPDATE `shopkeeper` SET `Contact`='' WHERE `Shop_Id`= '$shop_id'";
+        $qry = "UPDATE `shopkeepers` SET `Contact`='' WHERE `Shop_Id`= '$shop_id'";
 
         $run = mysqli_query($con,$qry);
 
-        $qry = "SELECT * FROM `shopkeeper` WHERE `Contact`='$contact'";
+        $qry = "SELECT * FROM `shopkeepers` WHERE `Contact`='$contact'";
         
         $run = mysqli_query($con,$qry);
 
@@ -85,7 +85,7 @@ if(isset($_SESSION['id']))
         {
             $temp=0;
             
-            $qry = "UPDATE `shopkeeper` SET `Contact`='$oldcontact' WHERE `Shop_Id`= '$shop_id'";
+            $qry = "UPDATE `shopkeepers` SET `Contact`='$oldcontact' WHERE `Shop_Id`= '$shop_id'";
             
             $run = mysqli_query($con,$qry);
             ?>
@@ -113,12 +113,12 @@ if(isset($_SESSION['id']))
 
     if($temp==1)
     {
-    $qry = "UPDATE `shopkeeper` SET `Shop_Id`='$shop_id',`Shop_Name`='$shop_name',`Shopkeeper_Name`='$shopkeeper_name',`Password`='$encoded_pass',`Contact`='$contact',`Address`='$address'
+    $qry = "UPDATE `shopkeepers` SET `Shop_Id`='$shop_id',`Shop_Name`='$shop_name',`Shopkeeper_Name`='$shopkeeper_name',`Password`='$encoded_pass',`Contact`='$contact',`Address`='$address'
                 WHERE `Contact`='$id' OR `Shop_Id`='$shop_id'";
 
     $run = mysqli_query($con,$qry);
 
-    $qry2 = "UPDATE `item` SET `Shop_Id`='$shop_id' WHERE `Shop_Id`='$oldshop_id'";
+    $qry2 = "UPDATE `items` SET `Shop_Id`='$shop_id' WHERE `Shop_Id`='$oldshop_id'";
 
     $run2 = mysqli_query($con,$qry2);
 

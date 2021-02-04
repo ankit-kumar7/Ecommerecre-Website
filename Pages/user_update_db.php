@@ -21,7 +21,7 @@ if(isset($_SESSION['uid']))
     $tempname = $_FILES['img']['tmp_name'];
     move_uploaded_file($tempname,"UserImage/$imagename");
 
-    $qry = "UPDATE `user` SET `Email`='' WHERE `Contact`= '$contact'";
+    $qry = "UPDATE `users` SET `Email`='' WHERE `Contact`= '$contact'";
 
     $run = mysqli_query($con,$qry);
 
@@ -29,7 +29,7 @@ if(isset($_SESSION['uid']))
             $temp=1;
         else
         {
-            $qry = "SELECT `Email` FROM `user` WHERE `Email`='$email'";
+            $qry = "SELECT `Email` FROM `users` WHERE `Email`='$email'";
 
             $run = mysqli_query($con,$qry);
 
@@ -77,7 +77,7 @@ if(isset($_SESSION['uid']))
             {
                 unlink('UserImage/'.$img);
             }
-            $qry = "UPDATE `user` SET `Name`='$name',`Email`='$email',`Password`='$encoded_pass',`Contact`= '$contact',`Address`='$address',`Image`='$imagename' 
+            $qry = "UPDATE `users` SET `Name`='$name',`Email`='$email',`Password`='$encoded_pass',`Contact`= '$contact',`Address`='$address',`Image`='$imagename' 
                         WHERE `Id` = '$id'";
 
             $run = mysqli_query($con,$qry);

@@ -48,7 +48,7 @@ if(isset($_SESSION['uid']))
 
     include_once('db_con.php');
 
-    $qry = "SELECT Shop_Id,Price FROM `item` WHERE `Product_Id` = '$pid'";
+    $qry = "SELECT Shop_Id, Price FROM `items` WHERE `Product_Id` = '$pid'";
 
     $run = mysqli_query($con,$qry);
 
@@ -59,7 +59,7 @@ if(isset($_SESSION['uid']))
 
        $shop_id = $item_data['Shop_Id'];
 
-        $qry2 = "SELECT * FROM `user` WHERE `Contact` = '$uid'";
+        $qry2 = "SELECT * FROM `users` WHERE `Contact` = '$uid'";
 
         $run2 = mysqli_query($con,$qry2);
 

@@ -13,7 +13,7 @@ else
 include_once('db_con.php');
 $user=$_POST['user'];
 $pass=$_POST['password'];
-$query = "SELECT * FROM `User`";
+$query = "SELECT * FROM `Users`";
 
   $run = mysqli_query($con,$query);
     if($run==true)

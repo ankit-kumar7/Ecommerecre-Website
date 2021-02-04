@@ -35,7 +35,7 @@ $id = $_SESSION['uid'];
 
 include_once('db_con.php');
 
-$qry = "SELECT * FROM `User` WHERE Contact='$id'";
+$qry = "SELECT * FROM `Users` WHERE Contact='$id'";
 
 $run = mysqli_query($con,$qry);
 

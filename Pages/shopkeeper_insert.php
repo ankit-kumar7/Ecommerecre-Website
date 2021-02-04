@@ -17,7 +17,7 @@ $encoded_pass = base64_encode($password);
 $contact = $_POST['contact'];
 $address = $_POST['address'];
 
-$qry = "SELECT `Contact` FROM `shopkeeper` WHERE `Contact`='$contact'";
+$qry = "SELECT `Contact` FROM `shopkeepers` WHERE `Contact`='$contact'";
 
 $run = mysqli_query($con,$qry);
 
@@ -58,7 +58,7 @@ else
 if($temp==1)
 {
 
-$qry = "INSERT INTO `shopkeeper`(`Shop_Id`, `Shop_Name`, `Shopkeeper_Name`, `Password`, `Contact`, `Address`) 
+$qry = "INSERT INTO `shopkeepers`(`Shop_Id`, `Shop_Name`, `Shopkeeper_Name`, `Password`, `Contact`, `Address`) 
             VALUES ('$shop_id','$shop_name','$shopkeeper_name','$encoded_pass','$contact','$address')";
 
 $run = mysqli_query($con,$qry);

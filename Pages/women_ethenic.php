@@ -23,7 +23,7 @@ include_once('db_con.php');
 
 include_once('navbar.php');
 
-$qry = "SELECT * FROM `item` WHERE `Product_Type` = 'Women(Ethenic Bottoms)'";
+$qry = "SELECT * FROM `items` WHERE `Product_Type` = 'Women(Ethenic Bottoms)'";
 
 $run=mysqli_query($con,$qry);
 if($run==true)
@@ -33,7 +33,7 @@ if($run==true)
         ?>
         <div style="position:relative;display:inline-block;padding-top:5%;">
             <div class="card" style="width: 300px;">
-                <img src="Item/<?php echo $data['Image'];?>" alt="Error" class="card-img-top" height="150px;">
+                <img src="Items/<?php echo $data['Image'];?>" alt="Error" class="card-img-top" height="150px;">
                 <div class="card-body popup">
                     <h4 class="card-title text-center"><?php echo $data['Product_Name'].'&nbsp'; echo$data['Price']."₹";?></h4>
                     <p class="card-text text-center"><?php echo $data['Description'];?></p>

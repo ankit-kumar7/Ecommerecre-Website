@@ -13,7 +13,7 @@ $user = $_POST['user'];
 $password = $_POST['password'];
 $encoded_pass = base64_encode($password);
 
-$qry = "SELECT * FROM `shopkeeper` WHERE `Contact` = '$user' AND `Password` = '$encoded_pass'";
+$qry = "SELECT * FROM `shopkeepers` WHERE `Contact` = '$user' AND `Password` = '$encoded_pass'";
 
 $run = mysqli_query($con,$qry);
 

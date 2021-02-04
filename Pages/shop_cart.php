@@ -8,7 +8,7 @@
 
         $id = $_SESSION['id'];
 
-        $qry = "SELECT `Shop_Id`, Shop_Name FROM `shopkeeper` WHERE `Contact`='$id'";
+        $qry = "SELECT `Shop_Id`, Shop_Name FROM `shopkeepers` WHERE `Contact`='$id'";
 
         $run = mysqli_query($con,$qry);
 
@@ -60,7 +60,7 @@
                 <tbody style="font-weight:650;!important">
                 <?php 
                     
-                    $qry = "SELECT * FROM `item` WHERE `Shop_Id` = '$shop_id'";
+                    $qry = "SELECT * FROM `items` WHERE `Shop_Id` = '$shop_id'";
 
                     $run = mysqli_query($con,$qry);
 

@@ -12,7 +12,7 @@ $product_id = $_GET['id'];
 
 $image = $_GET['img'];
 
-$qry = "DELETE FROM `item` WHERE `Product_Id` = '$product_id'";
+$qry = "DELETE FROM `items` WHERE `Product_Id` = '$product_id'";
 
 $run = mysqli_query($con,$qry);
 

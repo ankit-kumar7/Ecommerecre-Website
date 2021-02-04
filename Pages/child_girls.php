@@ -23,7 +23,7 @@ include_once('db_con.php');
 
 include_once('navbar.php');
 
-$qry = "SELECT * FROM `item` WHERE `Product_Type` = 'Child(Girls)'";
+$qry = "SELECT * FROM `items` WHERE `Product_Type` = 'Child(Girls)'";
 
 $run=mysqli_query($con,$qry);
 if($run==true)

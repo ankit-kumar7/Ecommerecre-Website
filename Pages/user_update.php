@@ -11,7 +11,7 @@ if(isset($_SESSION['uid']))
 
     echo $id;
 
-    $qry = "SELECT * FROM `user` WHERE `Contact` = '$id'";
+    $qry = "SELECT * FROM `users` WHERE `Contact` = '$id'";
 
     $run = mysqli_query($con,$qry);
     

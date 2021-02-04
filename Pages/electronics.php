@@ -28,7 +28,7 @@ $product=$_GET['id'];
 if($product=='fridge')
 {
 
-    $qry = "SELECT * FROM `item` WHERE `Product_Type` = 'Fridge'";
+    $qry = "SELECT * FROM `items` WHERE `Product_Type` = 'Fridge'";
 
     $run=mysqli_query($con,$qry);
     if($run==true)
@@ -73,7 +73,7 @@ if($product=='fridge')
 
 else if($product=='tv')
 {
-    $qry = "SELECT * FROM `item` WHERE `Product_Type` = 'Television'";
+    $qry = "SELECT * FROM `items` WHERE `Product_Type` = 'Television'";
 
     $run=mysqli_query($con,$qry);
     if($run==true)
@@ -119,7 +119,7 @@ else if($product=='tv')
 else if($product=='lappy')
 {
 
-    $qry = "SELECT * FROM `item` WHERE `Product_Type` = 'Laptop'";
+    $qry = "SELECT * FROM `items` WHERE `Product_Type` = 'Laptop'";
 
     $run=mysqli_query($con,$qry);
     if($run==true)
@@ -165,7 +165,7 @@ else if($product=='lappy')
 else
 {
 
-    $qry = "SELECT * FROM `item` WHERE `Product_Type` = 'Other'";
+    $qry = "SELECT * FROM `items` WHERE `Product_Type` = 'Other'";
 
     $run=mysqli_query($con,$qry);
     if($run==true)

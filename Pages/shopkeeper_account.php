@@ -23,7 +23,7 @@ if(isset($_SESSION['id']))
      $id = $_SESSION['id'];
      include_once('db_con.php');
 
-$qry = "SELECT * FROM `shopkeeper` WHERE Id = '$id' OR Contact = '$id'";
+$qry = "SELECT * FROM `shopkeepers` WHERE Id = '$id' OR Contact = '$id'";
 
 
 $run = mysqli_query($con,$qry);

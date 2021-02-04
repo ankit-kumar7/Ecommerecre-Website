@@ -23,7 +23,7 @@ include_once('db_con.php');
 
 include_once('navbar.php');
 
-$qry = "SELECT * FROM `item` WHERE `Product_Type` = 'Men(T-Shirts)'";
+$qry = "SELECT * FROM `items` WHERE `Product_Type` = 'Men(T-Shirts)'";
 
 $run=mysqli_query($con,$qry);
 if($run==true)
@@ -38,7 +38,7 @@ if($run==true)
                     <h4 class="card-title text-center"><?php echo $data['Product_Name'].'&nbsp'; echo$data['Price']."₹";?></h4>
                     <p class="card-text text-center"><?php echo $data['Description'];?></p>
                     <a href="add_cart.php?product_id=<?php echo $data['Product_Id'];?>" class="btn btn-primary popup">Add To Cart</a>
-                    <a href="order.php" class="btn btn-primary popup" style="margin-left:20%;">Buy Now</a>
+                    <a href="order.php?product_id=<?php echo $data['Product_Id'];?>" class="btn btn-primary popup" style="margin-left:20%;">Buy Now</a>
                 </div>
             </div>
         </div>

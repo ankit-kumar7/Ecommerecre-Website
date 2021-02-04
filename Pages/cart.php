@@ -23,6 +23,7 @@ if(isset($_SESSION['uid']))
     <body style="background-image: url(../Images/bg2.jpg);background-size:cover;background-repeat: no-repeat;margin:0px;padding:0px;!important">
         <div class="container">
             <h1 align="center">My Cart</h1>
+            <a href="home.php" align="left" class="text-primary" style="padding-top:3%;display:inline-block;!important"><h2> HOME</h2></a>
             <?php    
                 include_once('db_con.php');
 
@@ -58,7 +59,7 @@ if(isset($_SESSION['uid']))
                                 while($data = mysqli_fetch_assoc($run))
                                 {
                                     $product_id = $data['Product_Id'];
-                                    $qry2 = "SELECT `Shop_Id`,`Product_Id`,`Product_Name`, `Description`, `Price`, `Image` FROM `item` 
+                                    $qry2 = "SELECT `Shop_Id`,`Product_Id`,`Product_Name`, `Description`, `Price`, `Image` FROM `items` 
                                                 WHERE`Product_Id` ='$product_id'";
                                             
                                     $run2 = mysqli_query($con,$qry2);
@@ -67,7 +68,7 @@ if(isset($_SESSION['uid']))
 
                                     $shop_id = $dataitem['Shop_Id'];
 
-                                    $qry3 = "SELECT `Shop_Name` FROM `shopkeeper` WHERE `Shop_Id` = '$shop_id'";
+                                    $qry3 = "SELECT `Shop_Name` FROM `shopkeepers` WHERE `Shop_Id` = '$shop_id'";
 
                                     $run3 = mysqli_query($con,$qry3);
 
