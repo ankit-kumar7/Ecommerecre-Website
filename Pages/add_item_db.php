@@ -25,6 +25,37 @@ $imagename = $_FILES['img']['name'];
 $tempname = $_FILES['img']['tmp_name'];
 move_uploaded_file($tempname,"Item/$imagename");
 
+$qry1 = "SELECT * FROM `items`";
+$run1 = mysqli_query($con,$qry1);
+
+while($dt = mysqli_fetch_assoc($run1))
+{
+    if($product_id==$dt['Product_Id'])
+    {
+        ?>
+            <html>
+                <head>
+                    <link rel="stylesheet" type="text/css" href="../style.css">
+                        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+                </head>
+                <body>
+                <script>
+                    swal({
+                        title: "Add Item",
+                        text: "You entered wrong Product id!\n wqer",
+                        icon: "error",
+                        button: "Ok!"
+                        }).then(function() {
+                        window.location.replace("additem.php");
+                    });
+                    </script>
+                </body>
+            </html>
+        <?php
+    }
+}
+
+
 if($shop_id == $data['Shop_Id'])
 {
     $qry = "INSERT INTO `items`(`Shop_Id`, `Product_Id`, `Product_Name`, `Product_Type`, `Description`,`Price`, `Image`)

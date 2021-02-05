@@ -38,16 +38,22 @@ if(isset($_SESSION['uid']))
                     </div>
 
                     <div class="modal-body"></div>
-                    <form role="form" action="validuser.php" method="post" id="form">
+                    <form role="form" action="validuser.php" method="post" id="form" onsubmit="return validation()">
                         
                         <div class="form-group">
                             <label for="name"><i class="fa fa-user fa-2x"></i>User Id</label>
-                            <input type="num" name="user" id="user" class="form-control" placeholder="Phone number" require>
+                            <input type="num" name="user" id="user" class="form-control" placeholder="Phone number"
+                                onblur="nameValidation()">
+                            <span id="namet" style="color:green;"></span>
+                            <span id="namef" style="color:red;"></span>
                         </div>
 
                         <div class="form-group">
                             <label for="pass"><i class="fa fa-lock fa-2x"></i>Password</label>
-                            <input type="password" name="password" id="password" class="form-control" placeholder="Password" require>
+                            <input type="password" name="password" id="password" class="form-control" 
+                                placeholder="Password" onblur="passValidation()">
+                            <span id="passt" style="color:green;"></span>
+                            <span id="passf" style="color:red;"></span>
                         </div>
                 
                         <div class="modal-footer justify-content-center">
@@ -65,38 +71,83 @@ if(isset($_SESSION['uid']))
     </div>   
 
     <script>
+        function nameValidation()
+        {
+            var name = document.getElementById('user').value;
+            if(name=="")
+            {
+                document.getElementById('namet').innerHTML="";
+                document.getElementById('namef').innerHTML="User name is neccessary to fill out.";
+                return false;
+            }
+            if (typeof name == 'string')
+            {
+                var temp = Number(name);
+                var format = /^[0-9]+$/; 
+                if(!(Number.isInteger(temp)))
+                {
+                    document.getElementById('namet').innerHTML="";
+                    document.getElementById("namef").innerHTML="User name should be in valid format";
+                    return false;
+                }
+                if(((name.trim()).length < 10) || ((name.trim()).length > 10))
+                {
+                    document.getElementById('namet').innerHTML="";
+                    document.getElementById("namef").innerHTML="User name must be 10 digit";
+                    return false;
+                }
+                if(temp == 0)
+                {
+                    document.getElementById('namet').innerHTML="";
+                    document.getElementById("namef").innerHTML="User name should be in valid format";
+                    return false;
+                }
+                if(!format.test(name))
+                {
+                    document.getElementById('namet').innerHTML="";
+                    document.getElementById("namef").innerHTML="User name should be in valid format";
+                    return false;   
+                }
+                {
+                document.getElementById('namet').innerHTML="✔";
+                document.getElementById('namef').innerHTML="";
+                return true;
+                }
+            }            
+        }
+        function passValidation()
+        {
+            var password = document.getElementById('password').value;
+            if(password=="")
+            {
+                document.getElementById('passt').innerHTML="";
+                document.getElementById("passf").innerHTML="Password must be created.";
+                return false;   
+            }
+            {
+                document.getElementById('passt').innerHTML="✔";
+                document.getElementById('passf').innerHTML="";
+                return true;   
+            }
+        }
+
+        function validation()
+        {
+            if(!nameValidation())
+                return false;
+            if(!passValidation())
+                return false;
+            
+            return true;
+        }
+    </script>
+    <script>
 
         $(document).ready(function(){
             $("#modal").modal({
             backdrop: 'static',
             keyboard: false
         });
-
-        $(function() {
-
-            $("#form").validate({
-            rules: {
-                user: {
-                    required: true,
-                    number:true
-                     },
-                password: {
-                    required:true,
-                }
-            },
-            messages: {
-                user: {
-                    required: "Please enter the phone number",
-                    number: "Phone Number is not correct"
-                    },
-                password: {
-                    required:"Please enter the password"
-                }
-            }
-            });
-        });
-
-
         $(".close").click(function(){
             window.location.replace("../index.php");
         });

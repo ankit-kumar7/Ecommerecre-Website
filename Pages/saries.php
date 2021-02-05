@@ -21,7 +21,7 @@ include_once('db_con.php');
 
 include_once('navbar.php');
 
-$qry = "SELECT * FROM `items` WHERE `Product_Type` = 'Momen(Saries)'";
+$qry = "SELECT * FROM `items` WHERE `Product_Type` = 'Women(Saries)'";
 
 $run=mysqli_query($con,$qry);
 if($run==true)

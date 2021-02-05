@@ -14,13 +14,16 @@ include_once('db_con.php');
 $user=$_POST['user'];
 $pass=$_POST['password'];
 $query = "SELECT * FROM `Users`";
-
   $run = mysqli_query($con,$query);
     if($run==true)
     {
+        // echo "done";
         while($data = mysqli_fetch_assoc($run))
         {
-            if($user == $data['Contact'] && $pass == base64_decode($data['Password']) )
+            // echo $data['Contact']."\n";
+            // $p =base64_decode($data['Password'])."\n";
+            // echo $p;
+            if($user == $data['Contact'] && $pass == base64_decode($data['Password']))
             {
                 ?>
                 <html>
